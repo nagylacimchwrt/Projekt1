@@ -1,1 +1,2 @@
-# Projekt1
+# Első komplex iskola feladat.
+Feladatok nyílvántartása
