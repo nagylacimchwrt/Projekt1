@@ -1,2 +1,2 @@
-# Első komplex iskola feladat.
+# Első komplex iskolai feladat.
 Feladatok nyílvántartása
