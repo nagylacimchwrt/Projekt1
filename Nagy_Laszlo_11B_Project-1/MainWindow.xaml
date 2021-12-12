@@ -16,7 +16,7 @@
         <Button x:Name="ujElemHozzadasa" Content="Új hozzáadása" HorizontalAlignment="Left" Margin="558,73,0,0" VerticalAlignment="Top" Width="195" Height="25" Click="ujElemHozzadasa_Click"/>
         <Button Content="Kijelölt feladat módosítása" HorizontalAlignment="Left" Margin="558,103,0,0" VerticalAlignment="Top" Width="195" Height="25"/>
         <Button x:Name="torlesGomb" Content="Kijelölt feladat törlése" HorizontalAlignment="Left" Margin="558,133,0,0" VerticalAlignment="Top" Width="195" Height="25" Click="torlesGomb_Click"/>
-        <Button x:Name="visszaallitGomb" Content="Kijelölt feladat visszaállít" HorizontalAlignment="Left" Margin="558,311,0,0" VerticalAlignment="Top" Width="195" Height="25"/>
+        <Button x:Name="visszaallitGomb" Content="Kijelölt feladat visszaállít" HorizontalAlignment="Left" Margin="558,311,0,0" VerticalAlignment="Top" Width="195" Height="25" Click="visszaallitGomb_Click"/>
         <Button Content="Kijelölt feladat végleges törlése" Margin="558,341,0,0" VerticalAlignment="Top" Height="25" HorizontalAlignment="Left" Width="195"/>
         <Label Content="Nagy László @ 2021" HorizontalAlignment="Left" Margin="640,455,0,0" VerticalAlignment="Top" Height="34" Width="122"/>
 

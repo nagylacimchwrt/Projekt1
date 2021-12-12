@@ -63,7 +63,15 @@ namespace Nagy_Laszlo_11B_Project_1
             feladatok.Remove(kijelolt);
             feladatokListaja.Items.Refresh();
             toroltekListaja.Items.Refresh();
-            asd
+        }
+        
+        private void visszaallitGomb_Click(object sender, RoutedEventArgs e)
+        {
+            CheckBox kijelolt = (CheckBox)toroltekListaja.SelectedItem;
+            feladatok.Add(kijelolt);
+            toroltek.Remove(kijelolt);
+            feladatokListaja.Items.Refresh();
+            toroltekListaja.Items.Refresh();
         }
     }
 }
