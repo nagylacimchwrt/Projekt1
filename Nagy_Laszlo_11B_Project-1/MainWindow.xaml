@@ -14,10 +14,10 @@
         <ListBox x:Name="toroltekListaja" HorizontalAlignment="Left" Height="168" Margin="19,311,0,0" VerticalAlignment="Top" Width="530"/>
         <TextBox x:Name="beSzoveg" HorizontalAlignment="Left" Height="27" Margin="558,41,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="195"/>
         <Button x:Name="ujElemHozzadasa" Content="Új hozzáadása" HorizontalAlignment="Left" Margin="558,73,0,0" VerticalAlignment="Top" Width="195" Height="25" Click="ujElemHozzadasa_Click"/>
-        <Button Content="Kijelölt feladat módosítása" HorizontalAlignment="Left" Margin="558,103,0,0" VerticalAlignment="Top" Width="195" Height="25"/>
+        <Button x:Name="kijeloltFeladatModositasa" Content="Kijelölt feladat módosítása" HorizontalAlignment="Left" Margin="558,103,0,0" VerticalAlignment="Top" Width="195" Height="25" Click="kijeloltFeladatModositasa_Click"/>
         <Button x:Name="torlesGomb" Content="Kijelölt feladat törlése" HorizontalAlignment="Left" Margin="558,133,0,0" VerticalAlignment="Top" Width="195" Height="25" Click="torlesGomb_Click"/>
         <Button x:Name="visszaallitGomb" Content="Kijelölt feladat visszaállít" HorizontalAlignment="Left" Margin="558,311,0,0" VerticalAlignment="Top" Width="195" Height="25" Click="visszaallitGomb_Click"/>
-        <Button Content="Kijelölt feladat végleges törlése" Margin="558,341,0,0" VerticalAlignment="Top" Height="25" HorizontalAlignment="Left" Width="195"/>
+        <Button x:Name="veglegesTorlesGomb" Content="Kijelölt feladat végleges törlése" Margin="558,341,0,0" VerticalAlignment="Top" Height="25" HorizontalAlignment="Left" Width="195" Click="veglegesTorlesGomb_Click"/>
         <Label Content="Nagy László @ 2021" HorizontalAlignment="Left" Margin="640,455,0,0" VerticalAlignment="Top" Height="34" Width="122"/>
 
     </Grid>

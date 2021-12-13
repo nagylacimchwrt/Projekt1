@@ -73,5 +73,16 @@ namespace Nagy_Laszlo_11B_Project_1
             feladatokListaja.Items.Refresh();
             toroltekListaja.Items.Refresh();
         }
+
+        private void veglegesTorlesGomb_Click(object sender, RoutedEventArgs e)
+        {
+            CheckBox kijelolt = (CheckBox)toroltekListaja.SelectedItem;
+            toroltek.Remove(kijelolt);
+            toroltekListaja.Items.Refresh();
+        }
+
+        private void kijeloltFeladatModositasa_Click(object sender, RoutedEventArgs e)
+        {
+        }
     }
 }
