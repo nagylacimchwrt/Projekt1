@@ -117,6 +117,7 @@ namespace Nagy_Laszlo_11B_Project_1
             for (int i = 0; i < toroltek.Length; i++)
             {
                 CheckBox kijelolt = (CheckBox)toroltekListaja.Items[i];
+                if (kijelolt == null) continue;
                 toroltek[i] = kijelolt.Content.ToString() + ";" + kijelolt.IsChecked;
             }
 
@@ -125,7 +126,66 @@ namespace Nagy_Laszlo_11B_Project_1
 
         private void Betoltes()
         {
+            if (!File.Exists("feladatok.txt")) return;
+            string[] feladatokTomb = File.ReadAllLines("feladatok.txt");
+            List<CheckBox> kijeloltBox = new List<CheckBox>();
 
+            for (int i = 0; i < feladatokTomb.Length; i++)
+            {
+                string[] row = feladatokTomb[i].Split(';');
+                CheckBox kijeloltToAdd = new CheckBox();
+                kijeloltToAdd.Content = row[0];
+                if (row[1] == "True")
+                {
+                    kijeloltToAdd.IsChecked = true;
+                }
+                kijeloltToAdd.Checked += new RoutedEventHandler(CheckBox_Checked);
+                kijeloltToAdd.Unchecked += new RoutedEventHandler(CheckBox_Unchecked);
+                if (kijeloltToAdd.IsChecked == true)
+                {
+                    kijeloltToAdd.FontStyle = FontStyles.Italic;
+                    kijeloltToAdd.Foreground = Brushes.Gray;
+                }
+                else
+                {
+                    kijeloltToAdd.FontStyle = FontStyles.Normal;
+                    kijeloltToAdd.Foreground = Brushes.Black;
+                }
+                kijeloltBox.Add(kijeloltToAdd);
+                feladatok.Add(kijeloltToAdd);
+            }
+            feladatokListaja.ItemsSource = kijeloltBox;
+
+            if (!File.Exists("toroltfeladatok.txt")) return;
+            string[] toroltTomb = File.ReadAllLines("toroltfeladatok.txt");
+            List<CheckBox> toroltBox = new List<CheckBox>();
+
+            for (int i = 0; i < toroltTomb.Length; i++)
+            {
+                string[] row = toroltTomb[i].Split(';');
+                CheckBox kijeloltToAdd = new CheckBox();
+                kijeloltToAdd.Content = row[0];
+                if (row[1] == "True")
+                {
+                    kijeloltToAdd.IsChecked = true;
+                }
+                kijeloltToAdd.Checked += new RoutedEventHandler(CheckBox_Checked);
+                kijeloltToAdd.Unchecked += new RoutedEventHandler(CheckBox_Unchecked);
+                if (kijeloltToAdd.IsChecked == true)
+                {
+                    kijeloltToAdd.FontStyle = FontStyles.Italic;
+                    kijeloltToAdd.Foreground = Brushes.Gray;
+                }
+                else
+                {
+                    kijeloltToAdd.FontStyle = FontStyles.Normal;
+                    kijeloltToAdd.Foreground = Brushes.Black;
+                }
+
+                toroltBox.Add(kijeloltToAdd);
+                toroltek.Add(kijeloltToAdd);
+            }
+            toroltekListaja.ItemsSource = toroltBox;
         }
     }
 }
