@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,9 +26,13 @@ namespace Nagy_Laszlo_11B_Project_1
         public MainWindow()
         {
             InitializeComponent();
+            Application.Current.Exit += new ExitEventHandler (bezarTxtBeMent);
+            Betoltes();
             feladatokListaja.ItemsSource = feladatok;
             toroltekListaja.ItemsSource = toroltek;
         }
+
+        CheckBox utolso = null;
 
         private void ujElemHozzadasa_Click(object sender, RoutedEventArgs e)
         {
@@ -81,8 +86,46 @@ namespace Nagy_Laszlo_11B_Project_1
             toroltekListaja.Items.Refresh();
         }
 
+        private void feladatokListaja_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            CheckBox kijelolt = (CheckBox)feladatokListaja.SelectedItem;
+            if (kijelolt == null) return;
+            utolso = kijelolt;
+            beSzoveg.Text = kijelolt.Content.ToString();
+        }
+
         private void kijeloltFeladatModositasa_Click(object sender, RoutedEventArgs e)
         {
+            if (feladatokListaja.SelectedItem == null) return;
+            utolso.Content = beSzoveg.Text;
+        }
+
+        private void bezarTxtBeMent (object sender, ExitEventArgs e)
+        {
+            string[] feladatok = new string[feladatokListaja.Items.Count];
+            string[] toroltek = new string[toroltekListaja.Items.Count];
+
+            for (int i = 0; i < feladatok.Length; i++)
+            {
+                CheckBox kijelolt = (CheckBox)feladatokListaja.Items[i];
+                if (kijelolt == null) continue;
+                feladatok[i] = kijelolt.Content.ToString() + ";" + kijelolt.IsChecked;
+            }
+
+            File.WriteAllLines("feladatok.txt", feladatok);
+
+            for (int i = 0; i < toroltek.Length; i++)
+            {
+                CheckBox kijelolt = (CheckBox)toroltekListaja.Items[i];
+                toroltek[i] = kijelolt.Content.ToString() + ";" + kijelolt.IsChecked;
+            }
+
+            File.WriteAllLines("toroltfeladatok.txt", toroltek);
+        }
+
+        private void Betoltes()
+        {
+
         }
     }
 }

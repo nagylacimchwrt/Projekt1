@@ -10,7 +10,7 @@
         <Label Content="Feldatok listája" HorizontalAlignment="Left" Margin="19,10,0,0" VerticalAlignment="Top" Height="31" Width="94"/>
         <Label Content="Törölt elemek" HorizontalAlignment="Left" Margin="19,285,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.549,0.423"/>
         <Label Content="Feladat szövege:" HorizontalAlignment="Left" Margin="558,10,0,0" VerticalAlignment="Top"/>
-        <ListBox x:Name="feladatokListaja" HorizontalAlignment="Left" Height="234" Margin="19,41,0,0" VerticalAlignment="Top" Width="530"/>
+        <ListBox x:Name="feladatokListaja" HorizontalAlignment="Left" Height="234" Margin="19,41,0,0" VerticalAlignment="Top" Width="530" SelectionChanged="feladatokListaja_SelectionChanged"/>
         <ListBox x:Name="toroltekListaja" HorizontalAlignment="Left" Height="168" Margin="19,311,0,0" VerticalAlignment="Top" Width="530"/>
         <TextBox x:Name="beSzoveg" HorizontalAlignment="Left" Height="27" Margin="558,41,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="195"/>
         <Button x:Name="ujElemHozzadasa" Content="Új hozzáadása" HorizontalAlignment="Left" Margin="558,73,0,0" VerticalAlignment="Top" Width="195" Height="25" Click="ujElemHozzadasa_Click"/>
